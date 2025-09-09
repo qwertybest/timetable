@@ -4,80 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Timetable 10.3-353</title>
-  <link rel="icon" href="tag.png" type="image/x-icon">
+  <link rel="icon" href="tag.png" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body>
-  <header>
-    <div>
-      <h1>
-        <i class="fas fa-university mr-2"></i>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <header class="bg-indigo-700 text-white p-6 shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <h1 class="text-2xl sm:text-3xl font-extrabold flex items-center gap-2">
+        <i class="fas fa-university"></i>
         Kazan Federal University
       </h1>
+      <p class="text-indigo-200 text-sm sm:text-base">THE 10.3-353 GROUP TIMETABLE</p>
     </div>
-    <p>THE 10.3-353 GROUP TIMETABLE</p>
   </header>
-  <main>
-    <div>
-     <div>
-       <button id="showWeekBtn">
-        <i class="fas fa-calendar-week mr-2"></i> Show Whole Week
-      </button>
-     </div>
-    <div>
-        <a href="full_with_weeks.html">
-          <i class="fas fa-calendar-alt mr-2"></i> Show All Weeks
+
+  <main class="flex-grow max-w-7xl mx-auto p-4 sm:p-6 w-full">
+
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <div class="flex flex-wrap gap-3">
+        <button id="showWeekBtn" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md shadow transition">
+          <i class="fas fa-calendar-week"></i> Show Whole Week
+        </button>
+        <a href="full_with_weeks.html" class="flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold">
+          <i class="fas fa-calendar-alt"></i> Show All Weeks
         </a>
       </div>
-    </div>
-    <div >
-      <div>
-        <i class="fas fa-hashtag"></i>
-        <span>Week Number: <span id="weekNumber" class="text-indigo-900"></span></span>
+
+      <div class="flex flex-wrap gap-6 text-gray-700 text-sm sm:text-base">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-hashtag text-indigo-600"></i>
+          <span>Week Number: <span id="weekNumber" class="font-semibold text-indigo-900"></span></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fas fa-clock text-indigo-600"></i>
+          <span id="currentTime" class="font-mono text-indigo-900">--:--:--</span>
+        </div>
       </div>
-      <div>
-        <i class="fas fa-clock"></i>
-        <span id="currentTime">--:--:--</span>
-      </div>
     </div>
-    <div>
-      <i class="fas fa-hourglass-half text-yellow-600 text-4xl animate-pulse"></i>
-      <span id="timerText">Loading timer...</span>
+
+    <div class="flex items-center gap-3 mb-6">
+      <i class="fas fa-hourglass-half text-yellow-500 text-4xl animate-pulse"></i>
+      <span id="timerText" class="text-gray-700 font-semibold">Loading timer...</span>
     </div>
-    <section>
-      <button class="day-btn" data-day="Monday"><i class="fas fa-calendar-day mr-2"></i>Monday</button>
-      <button class="day-btn" data-day="Tuesday"><i class="fas fa-calendar-day mr-2"></i>Tuesday</button>
-      <button class="day-btn" data-day="Wednesday"><i class="fas fa-calendar-day mr-2"></i>Wednesday</button>
-      <button class="day-btn" data-day="Thursday"><i class="fas fa-calendar-day mr-2"></i>Thursday</button>
-      <button class="day-btn" data-day="Friday"><i class="fas fa-calendar-day mr-2"></i>Friday</button>
-      <button class="day-btn" data-day="Saturday"><i class="fas fa-calendar-day mr-2"></i>Saturday</button>
+
+    <section class="mb-6 flex flex-wrap gap-3 justify-center sm:justify-start">
+      <button class="day-btn bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-semibold rounded-md px-4 py-2 shadow transition" data-day="Monday">
+        <i class="fas fa-calendar-day mr-2"></i>Monday
+      </button>
+      <button class="day-btn bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-semibold rounded-md px-4 py-2 shadow transition" data-day="Tuesday">
+        <i class="fas fa-calendar-day mr-2"></i>Tuesday
+      </button>
+      <button class="day-btn bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-semibold rounded-md px-4 py-2 shadow transition" data-day="Wednesday">
+        <i class="fas fa-calendar-day mr-2"></i>Wednesday
+      </button>
+      <button class="day-btn bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-semibold rounded-md px-4 py-2 shadow transition" data-day="Thursday">
+        <i class="fas fa-calendar-day mr-2"></i>Thursday
+      </button>
+      <button class="day-btn bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-semibold rounded-md px-4 py-2 shadow transition" data-day="Friday">
+        <i class="fas fa-calendar-day mr-2"></i>Friday
+      </button>
+      <button class="day-btn bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-semibold rounded-md px-4 py-2 shadow transition" data-day="Saturday">
+        <i class="fas fa-calendar-day mr-2"></i>Saturday
+      </button>
     </section>
+
     <section>
-      <h2>
-        <i class="fas fa-list-ul"></i> Schedule for <span id="currentDay">Monday</span>
+      <h2 class="text-indigo-900 text-xl font-bold mb-4 flex items-center gap-2">
+        <i class="fas fa-list-ul"></i> Schedule for <span id="currentDay" class="capitalize">Monday</span>
       </h2>
-      <div>
-        <table>
-          <thead>
+      <div class="overflow-x-auto rounded-lg shadow border border-gray-300 bg-white">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-indigo-600 text-white">
             <tr>
-              <th><i class="fas fa-clock mr-1"></i> Time</th>
-              <th><i class="fas fa-book mr-1"></i> Subject</th>
-              <th><i class="fas fa-door-open mr-1"></i> Room</th>
-              <th><i class="fas fa-chalkboard-teacher mr-1"></i> Professor</th>
+              <th scope="col" class="px-4 py-3 text-left text-sm font-semibold uppercase whitespace-nowrap">
+                <i class="fas fa-clock mr-1"></i> Time
+              </th>
+              <th scope="col" class="px-4 py-3 text-left text-sm font-semibold uppercase whitespace-nowrap">
+                <i class="fas fa-book mr-1"></i> Subject
+              </th>
+              <th scope="col" class="px-4 py-3 text-left text-sm font-semibold uppercase whitespace-nowrap">
+                <i class="fas fa-door-open mr-1"></i> Room
+              </th>
+              <th scope="col" class="px-4 py-3 text-left text-sm font-semibold uppercase whitespace-nowrap">
+                <i class="fas fa-chalkboard-teacher mr-1"></i> Professor
+              </th>
             </tr>
           </thead>
-          <tbody id="scheduleBody"></tbody>
+          <tbody id="scheduleBody" class="divide-y divide-gray-200 text-gray-800 text-sm"></tbody>
         </table>
       </div>
     </section>
+
   </main>
-  <!-- <footer>
-    <p class="text-sm ">
-      © 2025 Created by <span class="font-semibold">Hudayberdiyew Serdar</span>. All rights reserved.
-    </p>
-  </footer> -->
+
   <script src="main.js"></script>
 </body>
 </html>
