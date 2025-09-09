@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timetable 10.3-353</title>
+  <link rel="icon" href="tag.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>
+        <i class="fas fa-university mr-2"></i>
+        Kazan Federal University
+      </h1>
+    </div>
+    <p>THE 10.3-353 GROUP TIMETABLE</p>
+  </header>
+  <main>
+    <div>
+     <div>
+       <button id="showWeekBtn">
+        <i class="fas fa-calendar-week mr-2"></i> Show Whole Week
+      </button>
+     </div>
+    <div>
+        <a href="full_with_weeks.html">
+          <i class="fas fa-calendar-alt mr-2"></i> Show All Weeks
+        </a>
+      </div>
+    </div>
+    <div >
+      <div>
+        <i class="fas fa-hashtag"></i>
+        <span>Week Number: <span id="weekNumber" class="text-indigo-900"></span></span>
+      </div>
+      <div>
+        <i class="fas fa-clock"></i>
+        <span id="currentTime">--:--:--</span>
+      </div>
+    </div>
+    <div>
+      <i class="fas fa-hourglass-half text-yellow-600 text-4xl animate-pulse"></i>
+      <span id="timerText">Loading timer...</span>
+    </div>
+    <section>
+      <button class="day-btn" data-day="Monday"><i class="fas fa-calendar-day mr-2"></i>Monday</button>
+      <button class="day-btn" data-day="Tuesday"><i class="fas fa-calendar-day mr-2"></i>Tuesday</button>
+      <button class="day-btn" data-day="Wednesday"><i class="fas fa-calendar-day mr-2"></i>Wednesday</button>
+      <button class="day-btn" data-day="Thursday"><i class="fas fa-calendar-day mr-2"></i>Thursday</button>
+      <button class="day-btn" data-day="Friday"><i class="fas fa-calendar-day mr-2"></i>Friday</button>
+      <button class="day-btn" data-day="Saturday"><i class="fas fa-calendar-day mr-2"></i>Saturday</button>
+    </section>
+    <section>
+      <h2>
+        <i class="fas fa-list-ul"></i> Schedule for <span id="currentDay">Monday</span>
+      </h2>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th><i class="fas fa-clock mr-1"></i> Time</th>
+              <th><i class="fas fa-book mr-1"></i> Subject</th>
+              <th><i class="fas fa-door-open mr-1"></i> Room</th>
+              <th><i class="fas fa-chalkboard-teacher mr-1"></i> Professor</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <!-- <footer>
+    <p class="text-sm ">
+      © 2025 Created by <span class="font-semibold">Hudayberdiyew Serdar</span>. All rights reserved.
+    </p>
+  </footer> -->
+  <script src="main.js"></script>
+</body>
+</html>
